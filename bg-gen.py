@@ -86,9 +86,7 @@ def get_args():
 
 if __name__ == "__main__":
     args = get_args()
-    input_dir = args.input
-    output_dir = args.output
-    files = list(map(lambda f: os.path.join(input_dir, f), os.listdir(input_dir)))
+    files = list(map(lambda f: os.path.join(args.input, f), os.listdir(args.input)))
     image_files = list(filter(is_image, files))
     print(f"Found {len(image_files)} images in directory.")
     for f in image_files:
