@@ -68,7 +68,9 @@ def get_dominant_color(image: Image):
     hsv = colorsys.rgb_to_hsv(
         dominant_color[0] / 255, dominant_color[1] / 255, dominant_color[2] / 255
     )
-    rgb = colorsys.hsv_to_rgb(hsv[0], clamp(hsv[1], 0.25, 0.45), clamp(hsv[2], 0.65, 0.85))
+    rgb = colorsys.hsv_to_rgb(
+        hsv[0], clamp(hsv[1], 0.25, 0.45), clamp(hsv[2], 0.65, 0.85)
+    )
     dominant_color = (int(rgb[0] * 255), int(rgb[1] * 255), int(rgb[2] * 255))
     return dominant_color
 
