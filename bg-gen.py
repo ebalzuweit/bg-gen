@@ -19,7 +19,7 @@ def bg_centered_crop(filepath: str, config):
     crop_offset = (
         center[0] - crop_size[0] // 2,
         center[1] - crop_size[1] // 2,
-	)
+    )
     crop_position = (
         crop_offset[0],
         crop_offset[1],
@@ -36,10 +36,16 @@ def bg_centered_crop(filepath: str, config):
             crop_position[0] - args.border,
             crop_position[1] - args.border,
             crop_position[2] + args.border,
-            crop_position[3] + args.border
+            crop_position[3] + args.border,
         )
-        border_size = (border_position[2] - border_position[0], border_position[3] - border_position[1])
-        output.paste(Image.new(mode="RGB", size=border_size, color=(255, 255, 255)), border_position)
+        border_size = (
+            border_position[2] - border_position[0],
+            border_position[3] - border_position[1],
+        )
+        output.paste(
+            Image.new(mode="RGB", size=border_size, color=(255, 255, 255)),
+            border_position,
+        )
     output.paste(input.resize(crop_size), crop_position)
 
     # save to file
@@ -49,7 +55,7 @@ def bg_centered_crop(filepath: str, config):
     print(f"Wrote {savepath}")
 
 
-def get_dominant_color(image : Image):
+def get_dominant_color(image: Image):
     img = image.copy()
     img = img.convert("RGBA")
     img = img.resize((1, 1), resample=0)
