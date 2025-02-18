@@ -4,9 +4,9 @@ simple image generator for backgrounds
 
 ## Usage
 
-`python bg-gen.py .images .`
+`uv run bg-gen.py .images .`
 
-Creates background images from the directory `.images`, saved in the current directory (`.`): 
+Creates background images from the directory `.images`, saved in the current directory (`.`):
 
 | Method           | Input                                               | Output                                             |
 | ---------------- | --------------------------------------------------- | -------------------------------------------------- |
